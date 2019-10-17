@@ -1,1 +1,1 @@
-# nodejs_graphql
+# Desenvolvendo uma API com NodeJS, usando: Express, Sequelize e GraphQL.
