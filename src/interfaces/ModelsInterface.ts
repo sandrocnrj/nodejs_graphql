@@ -1,6 +1,8 @@
-import { UserModel, UserInstance } from "../models/UserModel";
-export interface ModelsInterface {
+import { UserModel } from "../models/UserModel";
+import { PostModel } from "../models/PostModel";
 
+export interface ModelsInterface {
+    Post: PostModel;
     User: UserModel;
 
 }
