@@ -10,13 +10,13 @@ gulp.task('clean', () => {
         .pipe(clean());
 });
 
-gulp.task('static', gulp.series('clean', () => {
+gulp.task('static', ['clean'], () => {
     return gulp
         .src(['src/**/*.json'])
         .pipe(gulp.dest('dist'));
-}));
+});
 
-gulp.task('scripts', gulp.series('static', () => {
+gulp.task('scripts', ['static'], () => {
 
     const tsResult = tsProject.src()
         .pipe(tsProject());
@@ -24,12 +24,12 @@ gulp.task('scripts', gulp.series('static', () => {
     return tsResult.js
         .pipe(gulp.dest('dist'));
 
-}));
+});
 
-gulp.task('build', gulp.series('scripts'));
+gulp.task('build', ['scripts']);
 
-gulp.task('watch', gulp.series('build', () => {
-    return gulp.watch(['src/**/*.ts','src/**/*.json'], gulp.series('build'));
-}));
+gulp.task('watch', ['build'], () => {
+    return gulp.watch(['src/**/*.ts','src/**/*.json'], ['build']);
+});
 
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', ['watch']);
