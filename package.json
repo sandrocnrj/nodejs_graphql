@@ -27,7 +27,7 @@
     "@types/lodash": "4.14.78",
     "@types/node": "8.0.34",
     "@types/sequelize": "4.0.76",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-clean": "0.3.2",
     "gulp-typescript": "3.2.2",
     "nodemon": "1.12.0",
